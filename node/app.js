@@ -34,18 +34,16 @@ app.use(bodyParser());
 // });
 
 app.get('/results', function(request, response){
-  var nutritionix = require('nutritionix')({
-    appId: '74327998',
-    appKey: '674d7a56170dd05aeba19fcaa0f672a3'
-  }, false);
 
-  nutritionix.v1_1.search.standard({
-    phrase: 'mcdonalds',
-    results: '0:1'
-}, function (err, results){
-    console.log("error");
-});
-
+  nutritionix.search.standard({
+    q:'salad',
+    // use these for paging
+    limit: 10,
+    offset: 0,
+    // controls the basic nutrient returned in search
+    search_nutrient: 'calories'
+  }).then(successHandler, errorHandler)
+    .catch(uncaughtExceptionHandler);
 });
 
 app.listen(3000);

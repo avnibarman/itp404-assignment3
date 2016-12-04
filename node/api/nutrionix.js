@@ -2,7 +2,7 @@
 var nutritionix = require('nutritionix')({
   appId: '74327998',
   appKey: '674d7a56170dd05aeba19fcaa0f672a3'
-}, true);
+}, false);
 
 // var yelp = new Yelp({
 //   consumer_key: process.env.consumer_key,
@@ -11,7 +11,7 @@ var nutritionix = require('nutritionix')({
 //   token_secret: process.env.token_secret
 // });
 
-module.exports = {
+/*module.exports = {
   search: function(searchOptions) {
 
   var promise = nutritionix.search(searchOptions);

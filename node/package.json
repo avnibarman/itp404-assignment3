@@ -8,6 +8,7 @@
     "nutritionix": "^0.6.1",
     "sequelize": "^3.25.0",
     "twitter": "^1.4.0",
+    "wolfram-fit": "0.0.6",
     "yelp": "^1.0.1"
   }
 }
