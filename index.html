@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="main.js"></script>
+Search Subreddit:  <input type="text" id="search">
+<input type="submit" onclick="getSubreddits(document.getElementById('search').value)">
+
+
+
+<script type="template/handlebars" id="list-template">
+  {{#each d}}
+  <div class="format">
+    <h2><a href="{{data.url}}">{{data.title}}</a> </h2>
+    <p>Score: {{data.score}}</p>
+    <p>commentCount: {{data.num_comments}}</p>
+    {{#if data.archived}}
+      <p>Archived</p>
+      {{else}}
+      <p>Not Archived</p>
+    {{/if}}
+  </div>
+  {{else}}
+    <p>Nothing found</p>
+  {{/each}}
+</script>
+  
+  <div id="list">
+    
+  </div>
+</body>
+</html>
